@@ -50,70 +50,67 @@ export default function Hero() {
       <div className="absolute top-0 right-0 w-96 h-96 bg-plasma/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-pulse/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 w-full flex flex-col lg:flex-row items-center px-6 lg:px-16 gap-8">
-        {/* Left: text content */}
-        <div className="flex-1 flex flex-col items-start text-left">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.1, duration: 0.5 }}
-            className="flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-charge/30 bg-charge/5 text-charge text-xs font-mono uppercase tracking-widest"
-          >
-            <span className="h-1.5 w-1.5 rounded-full bg-charge animate-pulse-dot" />
-            Live Markets Active
-            <TrendingUp size={11} />
-          </motion.div>
+      <div className="relative z-10 w-full flex flex-col items-center text-center px-6">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          className="flex items-center gap-2 mb-8 px-4 py-2 rounded-full border border-charge/30 bg-charge/5 text-charge text-xs font-mono uppercase tracking-widest"
+        >
+          <span className="h-1.5 w-1.5 rounded-full bg-charge animate-pulse-dot" />
+          Live Markets Active
+          <TrendingUp size={11} />
+        </motion.div>
 
-          <h1
-            className="font-display text-[clamp(4rem,10vw,9rem)] font-bold leading-none tracking-tight mb-6"
-            aria-label="AXIOM"
-          >
-            {LETTERS.map((letter, i) => (
-              <span
-                key={i}
-                ref={(el) => { lettersRef.current[i] = el; }}
-                className="hero-letter inline-block"
-                style={{
-                  background: "linear-gradient(180deg, #f0f0ff 0%, rgba(240,240,255,0.5) 100%)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                  backgroundClip: "text",
-                }}
-              >
-                {letter}
-              </span>
-            ))}
-          </h1>
-
-          <p className="hero-sub opacity-0 font-body text-dim text-lg md:text-2xl font-light max-w-xl leading-relaxed mb-10">
-            Where <span className="text-plasma font-medium">Finance</span> meets{" "}
-            <span className="text-pulse font-medium">Data Intelligence</span>
-          </p>
-
-          <div className="hero-cta opacity-0 flex flex-col sm:flex-row gap-4 items-start">
-            <Link
-              href="/markets"
-              className="group relative inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-body font-semibold text-sm text-void overflow-hidden hover:scale-105 active:scale-95 transition-all duration-200"
+        <h1
+          className="font-display text-[clamp(5rem,18vw,14rem)] font-bold leading-none tracking-tight mb-6"
+          aria-label="AXIOM"
+        >
+          {LETTERS.map((letter, i) => (
+            <span
+              key={i}
+              ref={(el) => { lettersRef.current[i] = el; }}
+              className="hero-letter inline-block"
               style={{
-                background: "linear-gradient(135deg, #00f5d4, #00c4a9)",
-                boxShadow: "0 4px 28px rgba(0,245,212,0.35), 0 1px 0 rgba(255,255,255,0.2) inset",
+                background: "linear-gradient(180deg, #f0f0ff 0%, rgba(240,240,255,0.5) 100%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
               }}
             >
-              View Markets
-              <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
-            </Link>
-            <Link
-              href="/agent"
-              className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full border border-rim/60 text-dim hover:text-fore hover:border-fore/20 hover:scale-105 active:scale-95 transition-all duration-200 text-sm font-body"
-              style={{ boxShadow: "0 4px 16px rgba(0,0,0,0.2), 0 1px 0 rgba(255,255,255,0.04) inset" }}
-            >
-              Ask AI Agent
-            </Link>
-          </div>
+              {letter}
+            </span>
+          ))}
+        </h1>
+
+        <p className="hero-sub opacity-0 font-body text-dim text-lg md:text-2xl font-light max-w-xl leading-relaxed mb-10">
+          Where <span className="text-plasma font-medium">Finance</span> meets{" "}
+          <span className="text-pulse font-medium">Data Intelligence</span>
+        </p>
+
+        <div className="hero-cta opacity-0 flex flex-col sm:flex-row gap-4 items-center mb-12">
+          <Link
+            href="/markets"
+            className="group relative inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-body font-semibold text-sm text-void overflow-hidden hover:scale-105 active:scale-95 transition-all duration-200"
+            style={{
+              background: "linear-gradient(135deg, #00f5d4, #00c4a9)",
+              boxShadow: "0 4px 28px rgba(0,245,212,0.35), 0 1px 0 rgba(255,255,255,0.2) inset",
+            }}
+          >
+            View Markets
+            <ArrowRight size={15} className="group-hover:translate-x-0.5 transition-transform" />
+          </Link>
+          <Link
+            href="/agent"
+            className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full border border-rim/60 text-dim hover:text-fore hover:border-fore/20 hover:scale-105 active:scale-95 transition-all duration-200 text-sm font-body"
+            style={{ boxShadow: "0 4px 16px rgba(0,0,0,0.2), 0 1px 0 rgba(255,255,255,0.04) inset" }}
+          >
+            Ask AI Agent
+          </Link>
         </div>
 
-        {/* Right: Spline 3D scene */}
-        <div className="flex-1 relative h-[500px] lg:h-[700px] w-full">
+        {/* Spline 3D scene below content */}
+        <div className="w-full max-w-5xl h-[500px] lg:h-[600px]">
           <SplineScene
             scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
             className="w-full h-full"
@@ -133,3 +130,4 @@ export default function Hero() {
     </section>
   );
 }
+
