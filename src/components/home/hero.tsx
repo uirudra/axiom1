@@ -43,10 +43,22 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center overflow-hidden grid-bg"
+      className="relative min-h-screen flex items-center overflow-hidden"
     >
+      {/* Video background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        style={{ zIndex: 0 }}
+        autoPlay
+        muted
+        loop
+        playsInline
+        src="/From Klickpin.com- Bold Dollar Tree DIY Ideas for Right Now-pin-id-20618110789758103.mp4"
+      />
+      {/* Dark veil over video for readability */}
+      <div className="absolute inset-0 bg-void/75 pointer-events-none" style={{ zIndex: 1 }} />
       <BackgroundPaths />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,transparent_30%,#030308_100%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_50%,transparent_30%,#030308_90%)] pointer-events-none" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-plasma/5 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-pulse/5 rounded-full blur-3xl pointer-events-none" />
 
@@ -72,10 +84,8 @@ export default function Hero() {
               ref={(el) => { lettersRef.current[i] = el; }}
               className="hero-letter inline-block"
               style={{
-                background: "linear-gradient(180deg, #f0f0ff 0%, rgba(240,240,255,0.5) 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
+                color: "#00f5d4",
+                textShadow: "0 0 40px rgba(0,245,212,0.55), 0 0 90px rgba(0,245,212,0.2), 0 2px 14px rgba(0,0,0,0.9)",
               }}
             >
               {letter}
@@ -130,4 +140,3 @@ export default function Hero() {
     </section>
   );
 }
-
